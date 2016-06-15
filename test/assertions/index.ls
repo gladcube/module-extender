@@ -3,16 +3,16 @@
 module.exports = new class ModuleExtenderAssertion
   extend: extend =
     (extend)->
-      _module = (
+      (
         hello: (name)->
           "Hello #name!"
       )
       |> extend \hello, (f)->
         (name)->
           f \lorem + name
-      equal (_module.hello \foo), "Hello loremfoo!"
+      |> (let_ _, \hello, \foo) >> (equal _, "Hello loremfoo!")
     (extend)->
-      _module = (
+      (
         bar: \foobar
         foo: \foofoo
       )
@@ -22,13 +22,13 @@ module.exports = new class ModuleExtenderAssertion
       |> (get \foo) >> (equal _, \foofoo)
   replace: replace =
     (replace)->
-      _module =(
+      (
         hello:(name)->
           "Hello #name!"
       )
       |> replace \hello, (name)->
         \lorem + name
-      equal (_module.hello \foo), \loremfoo
+      |> (let_ _, \hello, \foo) >> (equal _, \loremfoo)
   before: before =
     (before)->
       _module =(
