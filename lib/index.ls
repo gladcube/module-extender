@@ -14,4 +14,3 @@ module.exports =
     extend key, (before _, cb), module
   after: (key, cb, module)-->
     extend key, (after _, cb), module
-

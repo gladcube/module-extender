@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "livescript": "^1.5.0",
-    "glad-functions": "0.0.18",
+    "glad-functions": "0.0.20",
     "prelude-ls": "^1.1.2"
   },
   "devDependencies": {
